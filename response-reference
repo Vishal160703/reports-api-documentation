@@ -1,0 +1,14 @@
+Response Fields
+data
+Property	Type	Description
+data	array	Contains the report objects returned by the API.
+Report Object
+Property	Type	Description
+id	integer	Unique identifier of the report.
+name	string	Name of the report.
+type	string	Type of report.
+format	string	Format of the report.
+status	string	Current status of the report.
+rows	integer	Number of rows contained in the report.
+generatedAt	string	Date and time associated with report generation.
+Example Report Object
