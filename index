@@ -1,0 +1,10 @@
+Use this endpoint to retrieve a list of reports.
+
+Quick Example
+Successful Response
+Documentation
+List Reports
+Response Reference
+Testing
+
+The endpoint was tested using Postman to verify the request, query parameters, response, and HTTP status code.
