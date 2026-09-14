@@ -1,34 +1,33 @@
+Base URL
 Request URL
 Query Parameters
-Parameter	Type	Required	Description
-page	integer	No	Specifies the page number to retrieve.
-limit	integer	No	Specifies the maximum number of reports to return.
+Parameter	Type	Description
+page	integer	Specifies the page number to retrieve.
+limit	integer	Specifies the maximum number of records to return.
 Request Headers
-Header	Value	Required	Description
-Accept	application/json	No	Specifies that the client expects a JSON response.
-Example Request
-cURL
+Header	Value
+Accept	application/json
+cURL Example
 Postman
 
-Configure the request in Postman as follows:
+Configure the request in Postman as follows.
 
 Method
-
 URL
-
 Header
 
 Click Send to execute the request.
 
 Successful Response
 
-200 OK
+The request returned 200 OK during testing.
 
-Response
+Response Overview
 
-The response contains a data array. Each object in the array represents a report.
+The response contains a data array. Each item in the array represents a report.
 
-See Response Reference for details about the response fields.
+For details about the response fields, see the
+Response Reference.
 
 HTTP Status Code
 Status Code	Description
@@ -39,5 +38,6 @@ The endpoint accepts page and limit query parameters.
 
 Example:
 
-page=1 requests the first page.
-limit=10 requests up to 10 records.
+The page parameter identifies the requested page, while limit specifies the maximum number of records requested.
+
+Pagination behavior beyond the parameters verified above is not documented until it has been tested against the API.
