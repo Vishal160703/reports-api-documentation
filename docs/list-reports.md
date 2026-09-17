@@ -41,3 +41,4 @@ Example:
 The page parameter identifies the requested page, while limit specifies the maximum number of records requested.
 
 Pagination behavior beyond the parameters verified above is not documented until it has been tested against the API.
+Move list reports documentation into docs folder
