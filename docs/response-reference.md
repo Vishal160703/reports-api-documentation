@@ -1,11 +1,13 @@
 
 # Response Reference
 
-This page describes the response structure and fields returned by the Reports API.
+This page describes the JSON response structure and fields returned by the Reports API.
 
 ## Response Structure
 
 A successful request returns a JSON object containing a `data` array.
+
+Each element in the `data` array represents a report object.
 
 ```json
 {
@@ -23,25 +25,25 @@ A successful request returns a JSON object containing a `data` array.
 }
 ```
 
-## Top-Level Fields
+## Response Overview
 
-| Field | Type | Description |
+| Property | Type | Description |
 |---|---|---|
 | `data` | array | Contains the report objects returned by the API. |
 
 ## Report Object
 
-Each item in the `data` array represents a report.
+The report object contains information about an individual report.
 
-| Field | Type | Description |
-|---|---|---|
-| `id` | integer | Identifies the report. |
-| `name` | string | Specifies the name of the report. |
-| `type` | string | Specifies the type of the report. |
-| `format` | string | Specifies the format of the report. |
-| `status` | string | Specifies the current status of the report. |
-| `rows` | integer | Specifies the number of rows associated with the report. |
-| `generatedAt` | string | Specifies the date and time associated with report generation. |
+| Field | Type | Description | Example |
+|---|---|---|---|
+| `id` | integer | Identifies the report. | `1` |
+| `name` | string | Specifies the name of the report. | `"Sales Report 1"` |
+| `type` | string | Specifies the report type. | `"sales"` |
+| `format` | string | Specifies the report format. | `"pdf"` |
+| `status` | string | Specifies the current report status. | `"ready"` |
+| `rows` | integer | Specifies the number of rows associated with the report. | `20423` |
+| `generatedAt` | string | Specifies the date and time associated with report generation. | `"2026-02-21T23:31:53+00:00"` |
 
 ## Field Details
 
@@ -49,71 +51,101 @@ Each item in the `data` array represents a report.
 
 Identifies the report.
 
+**Type:** `integer`
+
 Example:
 
 ```json
-"id": 1
+{
+  "id": 1
+}
 ```
 
 ### `name`
 
 Specifies the name of the report.
 
+**Type:** `string`
+
 Example:
 
 ```json
-"name": "Sales Report 1"
+{
+  "name": "Sales Report 1"
+}
 ```
 
 ### `type`
 
-Specifies the type of the report.
+Specifies the report type.
+
+**Type:** `string`
 
 Example:
 
 ```json
-"type": "sales"
+{
+  "type": "sales"
+}
 ```
 
 ### `format`
 
-Specifies the format of the report.
+Specifies the report format.
+
+**Type:** `string`
 
 Example:
 
 ```json
-"format": "pdf"
+{
+  "format": "pdf"
+}
 ```
 
 ### `status`
 
-Specifies the current status of the report.
+Specifies the current report status.
+
+**Type:** `string`
 
 Example:
 
 ```json
-"status": "ready"
+{
+  "status": "ready"
+}
 ```
 
 ### `rows`
 
 Specifies the number of rows associated with the report.
 
+**Type:** `integer`
+
 Example:
 
 ```json
-"rows": 20423
+{
+  "rows": 20423
+}
 ```
 
 ### `generatedAt`
 
 Specifies the date and time associated with report generation.
 
+**Type:** `string`
+
 Example:
 
 ```json
-"generatedAt": "2026-02-21T23:31:53+00:00"
+{
+  "generatedAt": "2026-02-21T23:31:53+00:00"
+}
 ```
+
+> The date-time format and timezone behavior have not been independently verified beyond the returned example.
 
 ## Complete Report Object
 
@@ -130,6 +162,8 @@ Example:
 ```
 
 ## Example Response
+
+The following example is based on the response observed during Postman testing.
 
 ```json
 {
@@ -155,3 +189,10 @@ Example:
   ]
 }
 ```
+
+## Documentation Notes
+
+- The `data` property was observed as an array in the tested response.
+- The report fields are documented based on the returned JSON structure.
+- Field validation rules and allowed values have not been independently verified.
+- Additional response properties should be documented after they are confirmed through testing.
