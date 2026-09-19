@@ -1,22 +1,29 @@
 
 # Reports API Documentation
 
+A practical REST API documentation project built with Markdown, Postman, MkDocs Material, and GitHub Pages.
+
+This project demonstrates how technical writers can structure API documentation to help developers understand endpoints, configure requests, and interpret API responses.
+
+[View API Reference](list-reports.md) · [About This Project](about.md)
+
+---
+
+## Project Overview
+
 The Reports API provides access to generated reports through a RESTful API.
 
-This documentation explains how to retrieve reports, configure request parameters, and interpret the API response.
+This documentation covers the request configuration, query parameters, response structure, and report object fields for the reports endpoint.
 
 ## API Information
 
 | Item | Details |
 |---|---|
-| API type | REST API |
+| API Type | REST API |
 | Base URL | `https://api.qaautomationlabs.com` |
-| API version | `v1` |
-| Response format | JSON |
-
-## Authentication
-
-Authentication requirements for this endpoint have not been documented because they were not verified during testing.
+| API Version | `v1` |
+| Response Format | JSON |
+| Documented Method | `GET` |
 
 ## Available Endpoint
 
@@ -24,18 +31,27 @@ Authentication requirements for this endpoint have not been documented because t
 |---|---|---|
 | `GET` | `/v1/reports` | Retrieves a list of reports |
 
-## Quick Example
+## Quick Start
+
+### Request
 
 ```bash
 curl -X GET "https://api.qaautomationlabs.com/v1/reports?page=1&limit=10" \
   -H "Accept: application/json"
 ```
 
-The request returned a successful `200 OK` response during testing.
+### Request Parameters
 
-## Response
+| Parameter | Type | Description |
+|---|---|---|
+| `page` | integer | Specifies the page number to retrieve. |
+| `limit` | integer | Specifies the maximum number of records requested. |
 
-The API returns report records inside the `data` array.
+### Response
+
+The endpoint returned a `200 OK` response during Postman testing.
+
+The response contains a `data` array with report objects.
 
 ```json
 {
@@ -53,12 +69,28 @@ The API returns report records inside the `data` array.
 }
 ```
 
-## Documentation
+---
 
-- [List Reports](list-reports.md)
-- [Response Reference](response-reference.md)
-- [Error Reference](errors.md)
+## Documentation Sections
+
+| Section | Description |
+|---|---|
+| [List Reports](list-reports.md) | Request details, parameters, headers, and examples. |
+| [Response Reference](response-reference.md) | Response structure and report object fields. |
+| [Error Reference](errors.md) | Verified behavior and unverified error test scenarios. |
+| [About This Project](about.md) | Project objectives, tools, and documentation approach. |
 
 ## Testing
 
 The endpoint was tested using Postman to verify the request configuration, query parameters, response structure, and HTTP status code.
+
+Only behavior verified during testing is documented as confirmed API behavior.
+
+## Tools Used
+
+- Markdown
+- Postman
+- GitHub
+- MkDocs
+- Material for MkDocs
+- GitHub Pages
