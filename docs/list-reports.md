@@ -1,19 +1,15 @@
 
 # List Reports
 
-Retrieves a list of generated reports.
+Retrieves a list of generated reports from the Reports API.
 
 ## Endpoint
 
-```http
-GET /v1/reports
-```
-
-## Base URL
-
-```text
-https://api.qaautomationlabs.com
-```
+| Item | Details |
+|---|---|
+| Method | `GET` |
+| Endpoint | `/v1/reports` |
+| Response format | JSON |
 
 ## Request URL
 
@@ -23,16 +19,18 @@ https://api.qaautomationlabs.com/v1/reports?page=1&limit=10
 
 ## Query Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `page` | integer | Specifies the page number to retrieve. |
-| `limit` | integer | Specifies the maximum number of records to return. |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `page` | integer | Not verified | Specifies the page number to retrieve. |
+| `limit` | integer | Not verified | Specifies the maximum number of records requested. |
+
+> **Note:** Whether these parameters are mandatory or optional has not been verified.
 
 ## Request Headers
 
-| Header | Value |
-|---|---|
-| `Accept` | `application/json` |
+| Header | Value | Description |
+|---|---|---|
+| `Accept` | `application/json` | Indicates that the client expects a JSON response. |
 
 ## cURL Example
 
@@ -41,29 +39,25 @@ curl -X GET "https://api.qaautomationlabs.com/v1/reports?page=1&limit=10" \
   -H "Accept: application/json"
 ```
 
-## Postman
+## Postman Configuration
 
-Configure the request in Postman as follows.
+Use the following configuration to test the endpoint in Postman.
 
-### Method
+| Setting | Value |
+|---|---|
+| Method | `GET` |
+| URL | `https://api.qaautomationlabs.com/v1/reports?page=1&limit=10` |
+| Header | `Accept: application/json` |
 
-```text
-GET
-```
+### Steps
 
-### URL
-
-```text
-https://api.qaautomationlabs.com/v1/reports?page=1&limit=10
-```
-
-### Header
-
-```text
-Accept: application/json
-```
-
-Click **Send** to execute the request.
+1. Open Postman.
+2. Create a new HTTP request.
+3. Select the `GET` method.
+4. Enter the request URL.
+5. Add the `Accept: application/json` header.
+6. Click **Send**.
+7. Review the HTTP status code and response body.
 
 ## Successful Response
 
@@ -96,15 +90,15 @@ The request returned `200 OK` during testing.
 
 ## Response Overview
 
-The response contains a `data` array. Each item in the array represents a report.
+The response contains a `data` array. Each element represents a report object.
 
-For details about the response fields, see the [Response Reference](response-reference.md).
+For information about the response fields, see the [Response Reference](response-reference.md).
 
 ## HTTP Status Code
 
 | Status Code | Description |
 |---|---|
-| `200 OK` | The request was successfully processed and report data was returned. |
+| `200 OK` | The request was successfully processed, and report data was returned. |
 
 ## Pagination
 
@@ -116,6 +110,14 @@ Example:
 /v1/reports?page=1&limit=10
 ```
 
-The `page` parameter identifies the requested page, while `limit` specifies the maximum number of records requested.
+The meaning of the parameters is documented based on their use in the tested request. Additional pagination behavior has not been verified.
 
-> Pagination behavior beyond the parameters verified above is not documented until it has been tested against the API.
+## Testing Notes
+
+The endpoint was tested using Postman.
+
+The verified test result was:
+
+- HTTP status: `200 OK`
+- Response format: JSON
+- Response structure: Object containing a `data` array
