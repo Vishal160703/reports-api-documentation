@@ -25,6 +25,7 @@ nav:
       - List Reports: list-reports.md
       - Response Reference: response-reference.md
       - Error Reference: errors.md
+  - About This Project: about.md
 
 markdown_extensions:
   - tables
